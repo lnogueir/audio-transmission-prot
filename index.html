@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Transmission</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+    <div class="justify-around">
+        <div class="m-3">
+            <h1>Audio Transmission Prototype</h1>
+            <h3>Client: <span></span></h3>
+            <h5>Connected to: <span></span></h5>
+            <h4>Room: <span id="joined-room"></span></h4>
+            <h5>Incoming audios (click to play):</h5>
+            <div id="incoming-audios"></div>
+        </div>
+        <div class="mt-5 m-3">
+            <div class="m-1 justify-center">
+                <button type="button" onclick="connectToServer()" class="btn btn-warning">
+                    Connect to Server
+                </button>
+            </div>
+            <div class="m-1 justify-center">
+                <div class="m-1">
+                    <button id="start-recording" onclick="startRecording()" type="button" class="btn btn-success">
+                        Start Recording
+                    </button>
+                </div>
+                <div class="m-1">
+                    <button id="stop-recording" onclick="stopRecording()" type="button" class="btn btn-danger">
+                        Stop Recording
+                    </button>
+                </div>
+            </div>
+            <div class="justify-center mt-3">
+                <div class="m-1">
+                    <button id="play-recording" onclick="playRecording()" type="button" class="btn btn-primary">
+                        Play Audio
+                    </button>
+                </div>
+                <div class="m-1">
+                    <button id="send-room" onclick="sendAudioToCurrentRoom()" type="button" class="btn btn-info">
+                        Submit To Your Room
+                    </button>
+                </div>
+            </div>
+            <div class="justify-center mt-3">
+                <div class="m-1">
+                    <button id="broadcast" onclick="broadcastAudio()" type="button" class="btn btn-purple">
+                        Broadcast to room
+                    </button>
+                </div>
+                <div class="m-1">
+                    <button id="stop-broadcast" onclick="stopBroadcast()" type="button" class="btn btn-danger">
+                        Stop Broadcasting
+                    </button>
+                </div>
+            </div>
+            <div class="justify-center mt-2" id="record-clock"></div>
+        </div>
+    </div>
+    <div class="mt-3">
+        <h2 style="text-align: center;">Rooms:</h2>
+        <div class="mt-1 justify-center">
+            <button id="add-room" onclick="createRoom()" type="button" class="btn btn-dark">+ Add room</button>
+        </div>
+        <div id="rooms" class="mt-1 justify-center">
+
+        </div>
+        <audio id="speaker" controls autoplay playsinline></audio>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="audio_scripts.js"></script>
+</body>
+
+</html>

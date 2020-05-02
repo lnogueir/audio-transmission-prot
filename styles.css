@@ -1,0 +1,59 @@
+.justify-center{
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+
+#speaker{
+    display:none;
+}
+
+.room{
+    margin: 7.5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    cursor:pointer; 
+}
+
+#record-clock{
+    display:none;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+.justify-start{
+    display:flex;
+    justify-content: flex-start;
+}
+
+.justify-around{
+    display:flex;
+    justify-content: space-around;
+}
+
+.justify-between{
+    display:flex;
+    justify-content: space-between;
+}
+
+.incoming-audio{
+    padding:5px;
+    margin:5px;
+    cursor: pointer;
+}
+
+.btn-purple{
+    background-color: #6a0dad ;
+    color: white;
+}
+
+.incoming-audio:hover{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
